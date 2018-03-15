@@ -6,9 +6,13 @@ import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.andryyu.kt.R
 import com.andryyu.kt.base.BaseActivity
+import com.andryyu.kt.domain.RequestForecastCommand
 import com.andryyu.kt.extensions.showToast
 import com.andryyu.kt.ui.adapter.ForecastListAdapter
+import org.jetbrains.anko.custom.async
 import org.jetbrains.anko.find
+import org.jetbrains.anko.toast
+import org.jetbrains.anko.uiThread
 import java.net.URL
 
 class WelcomeActivity : BaseActivity() {
@@ -29,7 +33,14 @@ class WelcomeActivity : BaseActivity() {
 
         val forecastList:RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
-        forecastList.adapter = ForecastListAdapter(items)
+        //forecastList.adapter = ForecastListAdapter(items)
+
+        async() {
+            val result = RequestForecastCommand("94043").execute()
+            uiThread{
+                forecastList.adapter =ForecastListAdapter(result) { toast(it.date) }
+            }
+        }
     }
 
     override fun onResume() {
@@ -43,4 +54,6 @@ class WelcomeActivity : BaseActivity() {
             Log.d(javaClass.simpleName, forecastJsonStr)
         }
     }
+
+
 }
