@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/App/App.iml" filepath="$PROJECT_DIR$/App/App.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Baselibrary/Baselibrary.iml" filepath="$PROJECT_DIR$/Baselibrary/Baselibrary.iml" />
       <module fileurl="file://$PROJECT_DIR$/KtHand.iml" filepath="$PROJECT_DIR$/KtHand.iml" />
-      <module fileurl="file://F:/WorkSpace/GitHub/KtHand/KtHand.iml" filepath="F:/WorkSpace/GitHub/KtHand/KtHand.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://F:/WorkSpace/GitHub/KtHand/app/app.iml" filepath="F:/WorkSpace/GitHub/KtHand/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Provider/Provider.iml" filepath="$PROJECT_DIR$/Provider/Provider.iml" />
     </modules>
   </component>
 </project>
