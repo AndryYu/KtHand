@@ -1,0 +1,11 @@
+ext {
+    //android 相关
+
+    //签名相关
+    signing = [
+            "release-store-file"   : "../kthand.jks",
+            "release-storePassword": "123456",
+            "release-keyAlias"     : "kthand",
+            "release-keyPassword"  : "123456"
+    ]
+}

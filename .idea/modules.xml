@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/KtHand.iml" filepath="$PROJECT_DIR$/.idea/modules/KtHand.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Provider/KtHand.Provider.iml" filepath="$PROJECT_DIR$/.idea/modules/Provider/KtHand.Provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/App/KtHand.app.iml" filepath="$PROJECT_DIR$/.idea/modules/App/KtHand.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/KtHand.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/KtHand.common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/KtHand.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/KtHand.network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.utilsModule.iml" filepath="$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.utilsModule.iml" />
     </modules>
   </component>
 </project>
