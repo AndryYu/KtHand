@@ -1,2 +1,4 @@
-include ':common'
+
 include ':app',':network', ':utilsModule'
+include ':ComponentOneWen'
+include ':common'

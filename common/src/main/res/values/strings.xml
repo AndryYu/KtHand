@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">KtHand</string>
+    <string name="kotlin_for_android_developers">Kotlin for android developers</string>
+    <string name="kotlin_title">kotlin项目</string>
+</resources>
