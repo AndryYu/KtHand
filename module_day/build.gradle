@@ -1,0 +1,114 @@
+// 1、取出isComponent字段
+def isComponent = rootProject.ext.isComponent
+
+// 2、根据isComponent字段，来确定当前是集成化 还是组件化
+if (isComponent) {
+    apply plugin: 'com.android.application'
+} else {
+    apply plugin: 'com.android.library'
+}
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+def version = rootProject.ext.AndroidID
+def appId = rootProject.ext.AppID
+def signing = rootProject.ext.signing
+def annotationProcessor = rootProject.ext.annotationProcessor
+
+// 调用清单文件处理函数
+rootProject.ext.manifestRelease(project.name)
+android {
+    compileSdkVersion version.compileSdkVersion
+    buildToolsVersion version.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion version.minSdkVersion
+        targetSdkVersion version.targetSdkVersion
+        if (isComponent){
+            applicationId appId.oneWen
+        }
+        versionCode 1
+        versionName "1.0"
+
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+    signingConfigs {
+        //发布版本
+        release {
+            storeFile file(signing["release-store-file"])
+            storePassword signing["release-storePassword"]
+            keyAlias signing["release-keyAlias"]
+            keyPassword signing["release-keyPassword"]
+        }
+        //开发版本配置
+        debug {
+            storeFile file(signing["release-store-file"])
+            storePassword signing["release-storePassword"]
+            keyAlias signing["release-keyAlias"]
+            keyPassword signing["release-keyPassword"]
+        }
+    }
+
+    // 维度
+    flavorDimensions "env"
+    productFlavors {
+        product {
+            dimension "env"
+            signingConfig signingConfigs.release
+            //服务器商用url
+            buildConfigField "String", "BASE_URL", '"https://39.96.43.68:9001/IE_EM_APPP/"'
+        }
+        dev {
+            dimension "env"
+            signingConfig signingConfigs.release
+            //服务器测试url
+            buildConfigField "String", "BASE_URL", '"http://1.119.150.199:21883/IE_EM_APKP/"'
+        }
+    }
+
+    sourceSets{
+        main{
+            if (isComponent){
+                manifest.srcFile 'src/main/AndroidManifest.xml'
+            }else{
+                manifest.srcFile 'src/main/_ReleaseManifest/AndroidManifest.xml'
+                java{
+                    //屏蔽测试代码
+                    exclude "**/debug/**"
+                }
+            }
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    annotationProcessor.each { k, v -> kapt(v) }
+    api project(path: ':lib_common')
+}

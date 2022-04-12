@@ -1,6 +1,7 @@
 package com.andryyu.kthand
 
-import com.andryyu.utils.application.BaseApplication
+import androidx.multidex.MultiDex
+import com.andryyu.common.base.BaseApplication
 
 
 /**

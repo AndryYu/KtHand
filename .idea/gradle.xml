@@ -12,11 +12,14 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/ComponentOneWen" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/common" />
-            <option value="$PROJECT_DIR$/network" />
-            <option value="$PROJECT_DIR$/utilsModule" />
+            <option value="$PROJECT_DIR$/lib_common" />
+            <option value="$PROJECT_DIR$/lib_mvvm" />
+            <option value="$PROJECT_DIR$/lib_network" />
+            <option value="$PROJECT_DIR$/lib_utils" />
+            <option value="$PROJECT_DIR$/module_day" />
+            <option value="$PROJECT_DIR$/module_home" />
+            <option value="$PROJECT_DIR$/module_news" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

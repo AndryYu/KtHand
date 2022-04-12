@@ -3,12 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/KtHand.iml" filepath="$PROJECT_DIR$/.idea/modules/KtHand.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OneWen/KtHand.ComponentOneWen.iml" filepath="$PROJECT_DIR$/.idea/modules/OneWen/KtHand.ComponentOneWen.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/Provider/KtHand.Provider.iml" filepath="$PROJECT_DIR$/.idea/modules/Provider/KtHand.Provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/App/KtHand.app.iml" filepath="$PROJECT_DIR$/.idea/modules/App/KtHand.app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/KtHand.common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/KtHand.common.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/KtHand.network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/KtHand.network.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.utilsModule.iml" filepath="$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.utilsModule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/KtHand.lib_common.iml" filepath="$PROJECT_DIR$/.idea/modules/common/KtHand.lib_common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/lib_mvvm/KtHand.lib_mvvm.iml" filepath="$PROJECT_DIR$/.idea/modules/lib_mvvm/KtHand.lib_mvvm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/network/KtHand.lib_network.iml" filepath="$PROJECT_DIR$/.idea/modules/network/KtHand.lib_network.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.lib_utils.iml" filepath="$PROJECT_DIR$/.idea/modules/UtilsModule/KtHand.lib_utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/OneWen/KtHand.module_day.iml" filepath="$PROJECT_DIR$/.idea/modules/OneWen/KtHand.module_day.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_home/KtHand.module_home.iml" filepath="$PROJECT_DIR$/.idea/modules/module_home/KtHand.module_home.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/module_news/KtHand.module_news.iml" filepath="$PROJECT_DIR$/.idea/modules/module_news/KtHand.module_news.iml" />
     </modules>
   </component>
 </project>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="com.andryyu.onewen">
-  <application android:allowBackup="true" android:supportsRtl="true" android:theme="@style/AppTheme">
-    <activity android:name=".OneWenDetailActivity"/>
-    <activity android:name=".OneWenActivity"/>
-  </application>
-</manifest>

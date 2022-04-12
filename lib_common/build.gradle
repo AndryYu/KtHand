@@ -1,0 +1,85 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+def version = rootProject.ext.AndroidID
+def signing = rootProject.ext.signing
+def common = rootProject.ext.common
+def annotation = rootProject.ext.annotationProcessor
+
+android {
+    compileSdkVersion version.compileSdkVersion
+    buildToolsVersion version.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion  version.minSdkVersion
+        targetSdkVersion  version.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    kapt {
+        arguments {
+            arg("AROUTER_MODULE_NAME", project.getName())
+        }
+    }
+
+    signingConfigs {
+        //发布版本
+        release {
+            storeFile file(signing["release-store-file"])
+            storePassword signing["release-storePassword"]
+            keyAlias signing["release-keyAlias"]
+            keyPassword signing["release-keyPassword"]
+        }
+        //开发版本配置
+        debug {
+            storeFile file(signing["release-store-file"])
+            storePassword signing["release-storePassword"]
+            keyAlias signing["release-keyAlias"]
+            keyPassword signing["release-keyPassword"]
+        }
+    }
+
+    // 维度
+    flavorDimensions "env"
+    productFlavors {
+        product {
+            dimension "env"
+            signingConfig signingConfigs.release
+            //服务器商用url
+            buildConfigField "String", "BASE_URL", '"https://39.96.43.68:9001/IE_EM_APPP/"'
+        }
+        dev {
+            dimension "env"
+            signingConfig signingConfigs.release
+            //服务器测试url
+            buildConfigField "String", "BASE_URL", '"http://1.119.150.199:21883/IE_EM_APKP/"'
+        }
+    }
+}
+
+dependencies {
+    common.each { k, v -> api(v) }
+    annotation.each { k, v -> kapt(v) }
+    api project(path: ':lib_network')
+}

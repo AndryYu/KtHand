@@ -1,4 +1,6 @@
-
-include ':app',':network', ':utilsModule'
-include ':ComponentOneWen'
-include ':common'
+include ':module_news'
+include ':lib_mvvm'
+include ':module_home'
+include ':app', ':lib_network', ':lib_utils'
+include ':module_day'
+include ':lib_common'

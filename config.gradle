@@ -5,11 +5,11 @@ ext {
 
     //android 相关
     AndroidID = [
-            compileSdkVersion : 32,
+            compileSdkVersion : 30,
             buildToolsVersion : "30.0.3",
 
             minSdkVersion : 19,
-            targetSdkVersion : 32,
+            targetSdkVersion : 30,
             versionCode : 1,
             versionName : "1.0.0",
 
@@ -18,8 +18,10 @@ ext {
 
     //应用ID
     AppID = [
-           app : "com.android.kthand",
-           oneWen : "com.andryyu.onewen"
+           app : "com.andryyu.kthand",
+           home : "com.andryyu.home",
+           oneWen : "com.andryyu.onewen",
+           news:"com.andryyu.news"
     ]
 
     //签名相关
@@ -28,5 +30,41 @@ ext {
             "release-storePassword": "123456",
             "release-keyAlias"     : "kthand",
             "release-keyPassword"  : "123456"
+    ]
+
+    //网络模块
+    network = [
+            //OkHttp3
+            okhttp : "com.squareup.okhttp3:okhttp:4.9.3",
+            okhttpinterceptor : "com.squareup.okhttp3:logging-interceptor:4.9.3",
+            //retrofit2
+            retrofit : "com.squareup.retrofit2:retrofit:2.9.0",
+            convertergson : "com.squareup.retrofit2:converter-gson:2.9.0",
+            retrofit2rxjava2adapter : "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0",
+            //RxJava2
+            rxjava : "io.reactivex.rxjava2:rxjava:2.2.10",
+            rxandroid : "io.reactivex.rxjava2:rxandroid:2.1.1",
+            //gson
+            gson : "com.google.code.gson:gson:2.8.9"
+    ]
+
+    //公共模块
+    common = [
+            arouterapi: 'com.alibaba:arouter-api:1.5.2',
+            //首页轮播图
+            banner: 'io.github.youth5201314:banner:2.2.2',
+            //下拉刷新控件
+            smartRefreshLayout:'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-15',
+            SmartRefreshHeader: 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-15',
+            //glide
+            glide: 'com.github.bumptech.glide:glide:4.12.0',
+            glideannotations: 'com.github.bumptech.glide:annotations:4.12.0',
+            multidex : 'com.android.support:multidex:2.0.1'
+    ]
+
+    //APT引用
+    annotationProcessor = [
+            aroutercompiler:'com.alibaba:arouter-compiler:1.2.2',
+            glidecompiler:'com.github.bumptech.glide:compiler:4.12.0'
     ]
 }
