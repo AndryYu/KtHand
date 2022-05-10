@@ -59,6 +59,8 @@ public class RetrofitManager {
         private static final RetrofitManager INSTANCE = new RetrofitManager();
     }
 
+
+
     /**
      * 获取RetrofitServiceManager
      * @return

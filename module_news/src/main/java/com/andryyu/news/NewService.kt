@@ -14,5 +14,5 @@ interface NewService {
                      @Query("page") page:String):Observable<BaseNewsResp<NewsListResp>>
 
     @GET("https://service-o5ikp40z-1255468759.ap-shanghai.apigateway.myqcloud.com/release/channel")
-    fun getNewsChannels():Observable<BaseNewsResp<NewsChannelResp>>
+    fun getNewsChannels():Observable<BaseNewsResp<NewsChannelResp?>?>
 }

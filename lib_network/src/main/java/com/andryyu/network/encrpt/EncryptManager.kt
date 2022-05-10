@@ -12,7 +12,7 @@ import javax.crypto.spec.SecretKeySpec
 object EncryptManager {
 
     @Throws(NoSuchAlgorithmException::class, UnsupportedEncodingException::class, InvalidKeyException::class)
-    fun calcAuthorization(source: String, secretId: String, secretKey: String, datetime: String): String? {
+    fun calcAuthorization(source: String, secretId: String, secretKey: String, datetime: String): String {
         val signStr = "x-date: $datetime\nx-source: $source"
         val mac: Mac = Mac.getInstance("HmacSHA1")
         val sKey: Key = SecretKeySpec(secretKey.toByteArray(charset("UTF-8")), mac.algorithm)
